@@ -1,0 +1,55 @@
+@mixin nav-gap {
+  display: flex;
+  column-gap: 30px;
+}
+
+header {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  height: 80px;
+  .main-menu {
+    max-width: 1200px;
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+    .logo-img {
+        width: 150px;
+        height: 60px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: none;
+        }
+      }
+      .navigation {
+        @include nav-gap;
+        text-transform: uppercase;
+        font-size: 12px;
+        
+        nav {
+          display: flex;
+          ul {
+            @include nav-gap;
+            a {
+                color: #222;
+                font-family: 'Roboto';
+                font-weight: bold;
+                transition: all 0.5s;
+                &:hover {
+                    color: #FFBA00;
+                    transition: all 0.5s;
+                }
+            }
+          }
+        }
+        .nav-icons {
+          display: flex;
+          column-gap: 15px;
+        }
+      }
+  }
+}
